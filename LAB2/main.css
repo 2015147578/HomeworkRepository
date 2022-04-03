@@ -1,0 +1,9 @@
+body		{ background-color: #EEEEEE; }
+em			{ color: red; }
+.hd			{ width: 75%; border-style: solid; border-left-width: 0px; border-right-width: 0px; padding: 20px; margin: auto; margin-bottom: 15px; text-align: center; font-size: 24px; font-family: Tahoma; font-weight: bold; }
+.fsignup	{ margin: 10px; text-align: center; font-size: 16px; font-family: Arial, Courier; }
+.mybtn		{ padding: 4px 8px; margin:auto; background-color: #000000; color: #EEEEEE; text-align: center; font-size: 14px; }
+.mybtn:hover{ background-color: #EEEEEE; color: #000000; }
+.btn1		{ border-top-left-radius: 5px; border-bottom-left-radius: 5px; }
+.btn2		{ border-top-right-radius: 5px; border-bottom-right-radius: 5px; }
+.btn3		{ border-top-left-radius: 5px; border-bottom-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; }
