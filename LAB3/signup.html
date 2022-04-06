@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>>My E-Commerce</title>
+		<link rel="stylesheet" type="text/css" href="main.css">
+	</head>
+	<body>
+		<div class="main">
+			<div class="hd">Welcome to My E-Commerce</div>
+			<div class="navi">
+				<div class="nbtndiv"><button class="nbtn" onclick="location.href='index.html'">Main</button></div>
+				<div class="nbtndiv"><button class="nbtn" onclick="location.href='login.html'">Login</button></div>
+				<div class="nbtndiv currpg"><button class="nbtn">Signup</button></div>
+			</div>
+			<div class="fsignup">
+				<p style="color:red;">(* required)</p>
+				<form>
+					<label><em>*</em> Name<br>
+					<input type="text" name="username" autofocus required></label><br><br>
+					<label><em>*</em> ID<br>
+					<input type="text" name="userid" required></label><br><br>
+					<label><em>*</em> Password<br>
+					<input type="password" name="userpass" required></label><br><br>
+					<label><em>*</em> Password Check<br>
+					<input type="password" name="userpasscheck" required></label><br><br>
+					<label>Grade<br>
+					<input type="number" name="usergrade" step="1" min="0" max="4"></label><br><br>
+					<label>Date of Birth<br>
+					<input type="date" name="userbirth"></label><br><br>
+					<label><em>*</em> Email<br>
+					<input type="email" name="usermail" placeholder="name@domain.com" required></label><br><br>
+					<label>Phone<br>
+					<input type="tel" name="usertel" pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}" placeholder="###-####-####"></label><br><br>
+					<input class="mybtn" type="submit" value="Submit">
+				</form>
+			</div>
+		</div>
+	</body>
+</html>
