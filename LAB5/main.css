@@ -1,7 +1,7 @@
 body		{background-color: #EEEEEE;}
 em			{color: red;}
 
-.main		{width: 90%; margin: auto; margin-top: 15px;}
+.main		{width: 1000px; margin: auto; margin-top: 15px;}
 .hd			{border-style: solid none; padding: 20px 10px 20px 10px; margin-bottom: 15px; text-align: left; font-size: 24px; font-family: Tahoma; font-weight: bold;}
 .navi		{padding: 0px 10px 10px 10px; display: flex; flex-direction: row; flex-wrap: wrap; justify-content: flex-start;}
 .nbtn		{font-size: 14px; padding: 2px px; margin: 5px; font-weight: bold; border: 0;}
@@ -29,7 +29,8 @@ em			{color: red;}
 
 .products	{display: flex; flex-flow: row wrap; justify-content: space-around; width: 100%;}
 .pdimg img	{width: 450px; height: 450px;}
-.pdinfo		{position: absolute; tex-align: center; width: 450px; height: 450px; opacity: 0; font-size: 22px;}
+.pdinfo		{position: absolute; text-align: center; width: 450px; height: 450px; opacity: 0; font-size: 22px; background: #EEEEEE;}
+.pdinfo p	{font-family: Tahoma; font-weight: bold; padding-top: 5px;}
 
 .ntc		{flex: 20%; max-width: 25%; margin: 4px 4px; border-style: solid; border-width: 1px;}
 
