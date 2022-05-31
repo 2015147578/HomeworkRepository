@@ -129,6 +129,7 @@ function init(product) {
 		const innerdiv = document.createElement('div');
 		const pinfo = document.createElement('p');
 		
+		const br = document.createElement("br");
 		const click = document.createElement('div');
 	
 		outerdiv.setAttribute('class', 'pdimg');
@@ -170,7 +171,7 @@ function init(product) {
 		outerdiv.appendChild(innerdiv);
 		innerdiv.appendChild(pinfo);
 		outerdiv.appendChild(img);
-		outerbox.innerHTML = '<br>';
+		outerdiv.appendChild(br);
 		outerdiv.appendChild(click);
 	}
 }
@@ -197,6 +198,7 @@ function infscroll() {
 		const innerdiv = document.createElement('div');
 		const pinfo = document.createElement('p');
 		
+		const br = document.createElement("br");
 		const click = document.createElement('div');
 
 		let url = './' + product[start].src;
@@ -240,7 +242,7 @@ function infscroll() {
 		outerdiv.appendChild(innerdiv);
 		innerdiv.appendChild(pinfo);
 		outerdiv.appendChild(img);
-		outerbox.innerHTML = '<br>';
+		outerdiv.appendChild(br);
 		outerdiv.appendChild(click);
 	}
 }
