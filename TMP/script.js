@@ -129,7 +129,6 @@ function init(product) {
 		const innerdiv = document.createElement('div');
 		const pinfo = document.createElement('p');
 		
-		const click = document.createElement('p');
 		const clickh = document.createElement('div');
 	
 		outerdiv.setAttribute('class', 'pdimg');
@@ -166,14 +165,11 @@ function init(product) {
 			}
 
 		pinfo.innerHTML = 'Product : ' + product.name + '<br/>Price(₩) : ' + product.price;
-		
-		click.textContent = "Click for detail";
 
 		pdbox.appendChild(outerdiv);
 		outerdiv.appendChild(innerdiv);
 		innerdiv.appendChild(pinfo);
 		outerdiv.appendChild(img);
-		outerdiv.appendChild(click);
 		outerdiv.appendChild(clickh);
 	}
 }
@@ -200,7 +196,7 @@ function infscroll() {
 		const innerdiv = document.createElement('div');
 		const pinfo = document.createElement('p');
 		
-		const click = document.createElement('p');
+		const clickh = document.createElement('div');
 
 		let url = './' + product[start].src;
     
@@ -238,14 +234,11 @@ function infscroll() {
 			}
 
 		pinfo.innerHTML = 'Product : ' + product[start].name + '<br/>Price(₩) : ' + product[start].price;
-			
-		click.textContent = "Click for detail";
     
 		pdbox.appendChild(outerdiv);
 		outerdiv.appendChild(innerdiv);
 		innerdiv.appendChild(pinfo);
 		outerdiv.appendChild(img);
-		outerdiv.appendChild(click);
 		outerdiv.appendChild(clickh);
 	}
 }
