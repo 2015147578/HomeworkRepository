@@ -109,7 +109,7 @@ function init(product) {
 			pdbox.appendChild(nresult);
 		}
 		else {
-			imgcounter = 4;
+			imgcount = 4;
 			globpd = nameFiltered;
 			for(let i = 0; i < 4; i++) {
 				createImgUrl(nameFiltered[i], i);
