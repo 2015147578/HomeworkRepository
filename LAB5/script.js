@@ -150,7 +150,7 @@ function init(product) {
 				}
 			}
 
-        pinfo.innerHTML = 'Product: ' + product.name + '<br/>Price(₩) : ' + product.price;
+        pinfo.innerHTML = 'Product : ' + product.name + '<br/>Price(₩) : ' + product.price;
 		
 		click.textContent = "Click for detail";
 
@@ -208,7 +208,7 @@ function infscroll() {
 					}
 				}
 
-            pinfo.innerHTML = 'Product: ' + product.name + '<br/>Price(₩) : ' + product.price;
+            pinfo.innerHTML = 'Product : ' + product.name + '<br/>Price(₩) : ' + product.price;
 			
 			click.textContent = "Click for detail";
     
