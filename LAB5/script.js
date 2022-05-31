@@ -30,6 +30,8 @@ function init(product) {
 
     function filterPrice(e) {
         e.preventDefault();
+		
+		imgcount = 4;
 
         priceFiltered = [];
         nameFiltered = [];
@@ -162,7 +164,7 @@ function init(product) {
 
 window.addEventListener('scroll', () => {
     const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
-    if(clientHeight + scrollTop >= scrollHeight - 3) {
+    if(clientHeight + scrollTop >= scrollHeight - 10) {
         infscroll();
     }
 });
@@ -171,7 +173,7 @@ function infscroll() {
     const pdbox = document.getElementById('pdbox');
 
     var start = imgcount;
-    var end = start + 3;
+    var end = start + 2;
     imgcount = end;
 
     fetch(myReq).then(response => response.json()).then(function(json) {
