@@ -140,6 +140,7 @@ function init(product) {
 		clickh.setAttribute('class', 'click');
 		clickh.textContent = "Click for detail";
 		clickh.style.opacity = "1";
+		clickh.id = i;
 		
 		innerdiv.setAttribute('class', 'pdinfo');
 		innerdiv.id = i;
@@ -167,6 +168,13 @@ function init(product) {
 		outerdiv.appendChild(clickh);
 	}
 }
+
+window.addEventListener('scroll', () => {
+	const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
+	if(clientHeight + scrollTop >= scrollHeight - 10) {
+		infscroll();
+	}
+});
 
 function infscroll() {
 	const pdbox = document.getElementById('pdbox');
@@ -223,10 +231,3 @@ function infscroll() {
 		outerdiv.appendChild(clickh);
 	}
 }
-
-window.addEventListener('scroll', () => {
-	const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
-	if(clientHeight + scrollTop >= scrollHeight - 10) {
-		infscroll();
-	}
-});
