@@ -129,35 +129,49 @@ function init(product) {
 		const innerdiv = document.createElement('div');
 		const pinfo = document.createElement('p');
 		
-		const click = document.createElement('p');
+		const br = document.createElement("br");
+		const click = document.createElement('div');
 	
 		outerdiv.setAttribute('class', 'pdimg');
 	
 		img.src = imgurl;
 		img.alt = product.name;
 		
+		click.setAttribute('class', 'click');
+		click.textContent = "Click for detail";
+		click.style.opacity = "1";
+		click.id = i + 'c';
+		
 		innerdiv.setAttribute('class', 'pdinfo');
 		innerdiv.id = i;
 		innerdiv.style.opacity = "0";
 		innerdiv.onclick =
 			function() {
-				let div =  document.getElementById(this.id);
-				if (div.style.opacity === "0") {
-					div.style.opacity = "1";
+				let divi = document.getElementById(this.id);
+				let divc = document.getElementById(this.id + 'c');
+				
+				if (divi.style.opacity === "0") {
+					divi.style.opacity = "1";
 				}
 				else {
-					div.style.opacity = "0";
+					divi.style.opacity = "0";
+				}
+				
+				if (divc.style.opacity === "0") {
+					divc.style.opacity = "1";
+				}
+				else {
+					divc.style.opacity = "0";
 				}
 			}
 
 		pinfo.innerHTML = 'Product : ' + product.name + '<br/>Price(₩) : ' + product.price;
-		
-		click.textContent = "Click for detail";
 
 		pdbox.appendChild(outerdiv);
 		outerdiv.appendChild(innerdiv);
 		innerdiv.appendChild(pinfo);
 		outerdiv.appendChild(img);
+		outerdiv.appendChild(br);
 		outerdiv.appendChild(click);
 	}
 }
@@ -184,7 +198,8 @@ function infscroll() {
 		const innerdiv = document.createElement('div');
 		const pinfo = document.createElement('p');
 		
-		const click = document.createElement('p');
+		const br = document.createElement("br");
+		const click = document.createElement('div');
 
 		let url = './' + product[start].src;
     
@@ -192,29 +207,42 @@ function infscroll() {
 			
 		img.src = url;
 		img.alt = product.name;
+		
+		click.setAttribute('class', 'click');
+		click.textContent = "Click for detail";
+		click.style.opacity = "1";
+		click.id = start + 'c';
 
 		innerdiv.setAttribute('class', 'pdinfo');
 		innerdiv.id = start;
 		innerdiv.style.opacity = "0";
 		innerdiv.onclick =
 			function() {
-				let div =  document.getElementById(this.id);
-				if (div.style.opacity === "0") {
-					div.style.opacity = "1";
+				let divi = document.getElementById(this.id);
+				let divc = document.getElementById(this.id + 'c');
+				
+				if (divi.style.opacity === "0") {
+					divi.style.opacity = "1";
 				}
 				else {
-					div.style.opacity = "0";
+					divi.style.opacity = "0";
+				}
+				
+				if (divc.style.opacity === "0") {
+					divc.style.opacity = "1";
+				}
+				else {
+					divc.style.opacity = "0";
 				}
 			}
 
 		pinfo.innerHTML = 'Product : ' + product[start].name + '<br/>Price(₩) : ' + product[start].price;
-			
-		click.textContent = "Click for detail";
     
 		pdbox.appendChild(outerdiv);
 		outerdiv.appendChild(innerdiv);
 		innerdiv.appendChild(pinfo);
 		outerdiv.appendChild(img);
+		outerdiv.appendChild(br);
 		outerdiv.appendChild(click);
 	}
 }
