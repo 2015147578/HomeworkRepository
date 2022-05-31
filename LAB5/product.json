@@ -1,62 +1,62 @@
 [
 	{
 		"name": "Mango",
-		"price": ,
+		"price": 6000,
 		"img": "pd1.jpg"
 	},
 	{
 		"name": "Melon",
-		"price": ,
+		"price": 16000,
 		"img": "pd2.jpg"
 	},
 	{
 		"name": "Apple",
-		"price": ,
+		"price": 2000,
 		"img": "pd3.jpg"
 	},
 	{
 		"name": "Banana",
-		"price": ,
+		"price": 2500,
 		"img": "pd4.jpg"
 	},
 	{
 		"name": "Cherry",
-		"price": ,
+		"price": 2000,
 		"img": "pd5.jpg"
 	},
 	{
 		"name": "Orange",
-		"price": ,
+		"price": 2500,
 		"img": "pd6.jpg"
 	},
 	{
 		"name": "Kiwi",
-		"price": ,
+		"price": 2500,
 		"img": "pd7.jpg"
 	},
 	{
 		"name": "Lemon",
-		"price": ,
+		"price": 1500,
 		"img": "pd8.jpg"
 	},
 	{
 		"name": "Strawberry",
-		"price": ,
+		"price": 9000,
 		"img": "pd9.jpg"
 	},
 	{
 		"name": "Grapes",
-		"price": ,
+		"price": 12000,
 		"img": "pd10.jpg"
 	},
 	{
 		"name": "Peach",
-		"price": ,
+		"price": 8000,
 		"img": "pd11.jpg"
 	},
 	{
 		"name": "Blueberry",
-		"price": ,
+		"price": 4000,
 		"img": "pd12.jpg"
 	}
 ]
