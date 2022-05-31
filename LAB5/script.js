@@ -114,7 +114,7 @@ function init(product) {
     }
     
     function createImgUrl(product, i) {
-        let url = './' + product.img;
+        let url = './' + product.src;
         showProduct(url, product, i);
     }
     
@@ -123,13 +123,16 @@ function init(product) {
         const img = document.createElement('img');
 		
 		const innerdiv = document.createElement('div');
-		const info = document.createElement('p');
+		const pinfo = document.createElement('p');
         const price = document.createElement('p');
 		
-        const prompt = document.createElement('p');
+        const click = document.createElement('p');
 		
 
         outerdiv.setAttribute('class', 'pdimg');
+		
+		img.src = objURL;
+        img.alt = product.name;
 
         innerdiv.setAttribute('class', 'pdinfo');
         innerdiv.id = i;
@@ -145,31 +148,28 @@ function init(product) {
             }
         }
 
-        prompt.textContent = "Click for detail";
-
-        info.innerHTML = 'Product: ' + product.name; + '<br>' + 'Price(₩) : ' + product.price;
+        pinfo.innerHTML = 'Product: ' + product.name; + '<br>' + 'Price(₩) : ' + product.price;
         price.textContent = 'Price(₩) : ' + product.price;
-            
-        img.src = objURL;
-        img.alt = product.name;
+		
+		click.textContent = "Click for detail";
 
         pdbox.appendChild(outerdiv);
         outerdiv.appendChild(innerdiv);
-        innerdiv.appendChild(info);
+        innerdiv.appendChild(pinfo);
         innerdiv.appendChild(price)
         outerdiv.appendChild(img);
-        outerdiv.appendChild(prompt);
+        outerdiv.appendChild(click);
     }
 }
 
 window.addEventListener('scroll', () => {
     const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
     if(clientHeight + scrollTop >= scrollHeight - 3) {
-        load();
+        infscroll();
     }
 });
 
-function load() {
+function infscroll() {
     const pdbox = document.getElementById('pdbox');
 
     var start = imgcount;
@@ -183,14 +183,17 @@ function load() {
 			const img = document.createElement('img');
 		
 			const innerdiv = document.createElement('div');
-			const info = document.createElement('p');
+			const pinfo = document.createElement('p');
 			const price = document.createElement('p');
 		
-			const prompt = document.createElement('p');
+			const click = document.createElement('p');
 
             let url = './' + product[start].img;
     
             outerdiv.setAttribute('class', 'pdimg');
+			
+			img.src = objURL;
+			img.alt = product.name;
 
 			innerdiv.setAttribute('class', 'pdinfo');
             innerdiv.id = start;
@@ -206,20 +209,17 @@ function load() {
                 }
             }
 
-            prompt.textContent = "Click for detail";
-
-            info.textContent = 'Product: ' + product.name;
+            info.innerHTML = 'Product: ' + product.name; + '<br>' + 'Price(₩) : ' + product.price;
             price.textContent = 'Price(₩) : ' + product[start].price;
-            
-            img.src = url;
-            img.alt = product[start].name;
+			
+			click.textContent = "Click for detail";
     
             pdbox.appendChild(outerdiv);
 			outerdiv.appendChild(innerdiv);
-			innerdiv.appendChild(info);
+			innerdiv.appendChild(pinfo);
 			innerdiv.appendChild(price)
 			outerdiv.appendChild(img);
-			outerdiv.appendChild(prompt);
+			outerdiv.appendChild(click);
         }
     })
         .catch(console.error);
