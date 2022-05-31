@@ -17,22 +17,22 @@ function init(product) {
 	let currPrice = fprice.value;
 	let currName = '';
 	
-	let categoryGroup;
-    let finalGroup;
+	let priceFiltered;
+    let nameFiltered;
 
-    finalGroup = product;
-    updateDisplay();
+    nameFiltered = product;
+    productUpdate();
 
-    categoryGroup = []; // to displayList
-    finalGroup = [];
+    priceFiltered = [];
+    nameFiltered = [];
 
     fbtn.onclick = filterPrice;
 
     function filterPrice(e) {
         e.preventDefault();
 
-        categoryGroup = [];
-        finalGroup = [];
+        priceFiltered = [];
+        nameFiltered = [];
 
         if(fprice.value === currPrice && fname.value.trim() === currName) {
             return;
@@ -42,7 +42,7 @@ function init(product) {
             currName = fname.value.trim();
 
             if(fprice.value === 'all') {
-                categoryGroup = product;
+                priceFiltered = product;
                 filterName();
             }
 			else {
@@ -50,28 +50,28 @@ function init(product) {
 				if (price === "5000") {
 					for(let i = 0; i < product.length; i++){
 						if(product[i].price <= 5000) {
-							categoryGroup.push(product[i]);
+							priceFiltered.push(product[i]);
 						}
 					}
 				}
 				else if (price === "5001to10000") {
 					for(let i = 0; i < product.length; i++){
 						if(product[i].price > 5000 && product[i].price <= 10000) {
-							categoryGroup.push(product[i]);
+							priceFiltered.push(product[i]);
 						}
 					}
 				}
 				else if (price === "10001to15000") {
 					for(let i = 0; i < product.length; i++){
 						if(product[i].price > 10000 && product[i].price <= 15000) {
-							categoryGroup.push(product[i]);
+							priceFiltered.push(product[i]);
 						}
 					}
 				}
 				else if (price === "15001") {
 					for(let i = 0; i < product.length; i++){
 						if(product[i].price > 15000) {
-							categoryGroup.push(product[i]);
+							priceFiltered.push(product[i]);
 						}
 					}
 				}
@@ -82,33 +82,33 @@ function init(product) {
 
     function filterName() {
         if(fname.value.trim() === '') {
-            finalGroup = categoryGroup;
-            updateDisplay();
+            nameFiltered = priceFiltered;
+            productUpdate();
         }
 		else {
             let lowerCaseSearchTerm = fname.value.trim().toLowerCase();
     
-            for(let i = 0; i < categoryGroup.length; i++) {
-                if(categoryGroup[i].name.toLowerCase().includes(lowerCaseSearchTerm)) {
-                    finalGroup.push(categoryGroup[i]);
+            for(let i = 0; i < priceFiltered.length; i++) {
+                if(priceFiltered[i].name.toLowerCase().includes(lowerCaseSearchTerm)) {
+                    nameFiltered.push(priceFiltered[i]);
                 }
             }
-            updateDisplay();
+            productUpdate();
         }
     }
     
-    function updateDisplay() {
+    function productUpdate() {
         while (pdbox.firstChild) {
             pdbox.removeChild(pdbox.firstChild);
         }
     
-        if(finalGroup.length === 0) {
+        if(nameFiltered.length === 0) {
             const para = document.createElement('p');
             para.textContent = 'No results to display!';
             pdbox.appendChild(para);
         } else {
             for(let i = 0; i < 4; i++) {
-                fetchImg(finalGroup[i], i);
+                fetchImg(nameFiltered[i], i);
             }
         }
     }
