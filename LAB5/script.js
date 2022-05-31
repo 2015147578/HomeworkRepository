@@ -104,7 +104,7 @@ function init(product) {
     
         if(nameFiltered.length === 0) {
             const para = document.createElement('p');
-            para.textContent = 'No results to display!';
+            para.textContent = 'No Result';
             pdbox.appendChild(para);
         } else {
             for(let i = 0; i < 4; i++) {
@@ -142,7 +142,7 @@ function init(product) {
             }
         }
 
-        prompt.textContent = "Click to see more";
+        prompt.textContent = "Click for detail";
 
         info.textContent = product.name;
         price.textContent = '₩' + product.price;
@@ -201,7 +201,7 @@ function load() {
                 }
             }
 
-            prompt.textContent = "Click to see more";
+            prompt.textContent = "Click for detail";
 
             info.textContent = product[start].name;
             price.textContent = '$' + product[start].price;
