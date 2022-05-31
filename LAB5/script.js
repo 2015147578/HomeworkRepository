@@ -1,5 +1,6 @@
 const myReq = new Request('product.json')
 let imgcount = 4;
+let globpd;
 
 fetch(myReq).then(response => response.json()).then(
 	function(json) {
@@ -30,8 +31,6 @@ function init(product) {
 
     function filterPrice(e) {
         e.preventDefault();
-		
-		imgcount = 4;
 
         priceFiltered = [];
         nameFiltered = [];
@@ -110,6 +109,8 @@ function init(product) {
             pdbox.appendChild(nresult);
         }
 		else {
+			imgcounter = 4;
+			globpd = nameFiltered;
             for(let i = 0; i < 4; i++) {
                 createImgUrl(nameFiltered[i], i);
             }
@@ -121,25 +122,24 @@ function init(product) {
         showProduct(url, product, i);
     }
     
-    function showProduct(imgurl, product, i) {
-        const outerdiv = document.createElement('div');
-        const img = document.createElement('img');
+    function showProduct(imgurl, product, i) {		
+		const outerdiv = document.createElement('div');
+		const img = document.createElement('img');
 		
 		const innerdiv = document.createElement('div');
 		const pinfo = document.createElement('p');
 		
-        const click = document.createElement('p');
-		
-
-        outerdiv.setAttribute('class', 'pdimg');
-		
+		const click = document.createElement('p');
+	
+		outerdiv.setAttribute('class', 'pdimg');
+	
 		img.src = imgurl;
-        img.alt = product.name;
-
-        innerdiv.setAttribute('class', 'pdinfo');
-        innerdiv.id = i;
-        innerdiv.style.opacity = "0";
-        innerdiv.onclick =
+		img.alt = product.name;
+		
+		innerdiv.setAttribute('class', 'pdinfo');
+		innerdiv.id = i;
+		innerdiv.style.opacity = "0";
+		innerdiv.onclick =
 			function() {
 				let div =  document.getElementById(this.id);
 				if (div.style.opacity === "0") {
@@ -150,16 +150,16 @@ function init(product) {
 				}
 			}
 
-        pinfo.innerHTML = 'Product : ' + product.name + '<br/>Price(₩) : ' + product.price;
+		pinfo.innerHTML = 'Product : ' + product.name + '<br/>Price(₩) : ' + product.price;
 		
 		click.textContent = "Click for detail";
 
-        pdbox.appendChild(outerdiv);
-        outerdiv.appendChild(innerdiv);
-        innerdiv.appendChild(pinfo);
-        outerdiv.appendChild(img);
-        outerdiv.appendChild(click);
-    }
+		pdbox.appendChild(outerdiv);
+		outerdiv.appendChild(innerdiv);
+		innerdiv.appendChild(pinfo);
+		outerdiv.appendChild(img);
+		outerdiv.appendChild(click);
+	}
 }
 
 window.addEventListener('scroll', () => {
@@ -175,49 +175,46 @@ function infscroll() {
     var start = imgcount;
     var end = start + 2;
     imgcount = end;
-
-    fetch(myReq).then(response => response.json()).then(function(json) {
-        let product = json;
-        for(start; start < end; start++) {
-            const outerdiv = document.createElement('div');
-			const img = document.createElement('img');
+	
+    let product = globpd;
+    for(start; start < end; start++) {
+        const outerdiv = document.createElement('div');
+		const img = document.createElement('img');
 		
-			const innerdiv = document.createElement('div');
-			const pinfo = document.createElement('p');
+		const innerdiv = document.createElement('div');
+		const pinfo = document.createElement('p');
 		
-			const click = document.createElement('p');
+		const click = document.createElement('p');
 
-            let url = './' + product[start].src;
+        let url = './' + product[start].src;
     
-            outerdiv.setAttribute('class', 'pdimg');
+        outerdiv.setAttribute('class', 'pdimg');
 			
-			img.src = url;
-			img.alt = product.name;
+		img.src = url;
+		img.alt = product.name;
 
-			innerdiv.setAttribute('class', 'pdinfo');
-            innerdiv.id = start;
-            innerdiv.style.opacity = "0";
-            innerdiv.onclick =
-				function() {
-					let div =  document.getElementById(this.id);
-					if (div.style.opacity === "0") {
-						div.style.opacity = "1";
-					}
-					else {
-						div.style.opacity = "0";
-					}
+		innerdiv.setAttribute('class', 'pdinfo');
+        innerdiv.id = start;
+        innerdiv.style.opacity = "0";
+        innerdiv.onclick =
+			function() {
+				let div =  document.getElementById(this.id);
+				if (div.style.opacity === "0") {
+					div.style.opacity = "1";
 				}
+				else {
+					div.style.opacity = "0";
+				}
+			}
 
-            pinfo.innerHTML = 'Product : ' + product[start].name + '<br/>Price(₩) : ' + product[start].price;
+        pinfo.innerHTML = 'Product : ' + product[start].name + '<br/>Price(₩) : ' + product[start].price;
 			
-			click.textContent = "Click for detail";
+		click.textContent = "Click for detail";
     
-            pdbox.appendChild(outerdiv);
-			outerdiv.appendChild(innerdiv);
-			innerdiv.appendChild(pinfo);
-			outerdiv.appendChild(img);
-			outerdiv.appendChild(click);
-        }
-    })
-        .catch(console.error);
-};
+        pdbox.appendChild(outerdiv);
+		outerdiv.appendChild(innerdiv);
+		innerdiv.appendChild(pinfo);
+		outerdiv.appendChild(img);
+		outerdiv.appendChild(click);
+    }
+}
