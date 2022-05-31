@@ -126,9 +126,9 @@ function init(product) {
         const info = document.createElement('p');
         const price = document.createElement('p');
 
-        outerdiv.setAttribute('class', 'onClickTextOverImage');
+        outerdiv.setAttribute('class', 'pdimg');
 
-        innerdiv.setAttribute('class', 'clickable');
+        innerdiv.setAttribute('class', 'pdinfo');
         innerdiv.id = i;
         innerdiv.style.opacity = "0";
         innerdiv.onclick = function(){
@@ -185,9 +185,9 @@ function load() {
 
             let url = './' + products[start].img;
     
-            outerdiv.setAttribute('class', 'onClickTextOverImage');
+            outerdiv.setAttribute('class', 'pdimg');
 
-            innerdiv.setAttribute('class', 'clickable');
+			innerdiv.setAttribute('class', 'pdinfo');
             innerdiv.id = start;
             innerdiv.style.opacity = "0";
             innerdiv.onclick = function(){

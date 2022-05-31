@@ -28,6 +28,8 @@ em			{color: red;}
 .producthd	{width: 100%; border-style: none none solid; padding: 20px 0px 10px 0px; margin-bottom: 15px; font-size: 22px; font-family: Tahoma; font-weight: bold;}
 
 .products	{display: flex; flex-flow: row wrap; justify-content: space-around; width: 100%;}
+.pdimg img	{width: 450px; height: 450px;}
+.pdinfo		{position: absolute; tex-align: center; width: 450px; height: 450px; opacity: 0; font-size: 22px;}
 
 .ntc		{flex: 20%; max-width: 25%; margin: 4px 4px; border-style: solid; border-width: 1px;}
 
