@@ -103,10 +103,11 @@ function init(product) {
         }
     
         if(nameFiltered.length === 0) {
-            const para = document.createElement('p');
-            para.textContent = 'No Result';
-            pdbox.appendChild(para);
-        } else {
+            const nresult = document.createElement('p');
+            nresult.textContent = 'No Result';
+            pdbox.appendChild(nresult);
+        }
+		else {
             for(let i = 0; i < 4; i++) {
                 createImgUrl(nameFiltered[i], i);
             }
