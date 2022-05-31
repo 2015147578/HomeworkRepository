@@ -137,7 +137,16 @@ function init(product) {
         innerdiv.setAttribute('class', 'pdinfo');
         innerdiv.id = i;
         innerdiv.style.opacity = "0";
-        innerdiv.onclick = switchOpacity(innerdiv.id);
+        innerdiv.onclick =
+			function() {
+				let div =  document.getElementById(this.id);
+				if (div.style.opacity === "0") {
+					div.style.opacity = "1";
+				}
+				else {
+					div.style.opacity = "0";
+				}
+			}
 
         pinfo.innerHTML = 'Product: ' + product.name + '<br/>Price(₩) : ' + product.price;
 		
@@ -186,7 +195,16 @@ function infscroll() {
 			innerdiv.setAttribute('class', 'pdinfo');
             innerdiv.id = start;
             innerdiv.style.opacity = "0";
-            innerdiv.onclick = switchOpacity(innerdiv.id);
+            innerdiv.onclick =
+				function() {
+					let div =  document.getElementById(this.id);
+					if (div.style.opacity === "0") {
+						div.style.opacity = "1";
+					}
+					else {
+						div.style.opacity = "0";
+					}
+				}
 
             pinfo.innerHTML = 'Product: ' + product.name + '<br/>Price(₩) : ' + product.price;
 			
@@ -200,17 +218,4 @@ function infscroll() {
         }
     })
         .catch(console.error);
-};
-
-function switchOpacity(i) {
-	var div = document.getElementById(i);
-	if(div.style.opacity === "0") {
-        div.style.opacity = "1";
-    }
-	else if(div.style.opacity === "1") {
-        div.style.opacity = "0";
-    }
-	else {
-		div.style.opacity = "0";
-	}
 };
