@@ -129,17 +129,17 @@ function init(product) {
 		const innerdiv = document.createElement('div');
 		const pinfo = document.createElement('p');
 		
-		const clickh = document.createElement('div');
+		const click = document.createElement('div');
 	
 		outerdiv.setAttribute('class', 'pdimg');
 	
 		img.src = imgurl;
 		img.alt = product.name;
 		
-		clickh.setAttribute('class', 'click');
-		clickh.textContent = "Click for detail";
-		clickh.style.opacity = "1";
-		clickh.id = i + 'c';
+		click.setAttribute('class', 'click');
+		click.textContent = "Click for detail";
+		click.style.opacity = "1";
+		click.id = i + 'c';
 		
 		innerdiv.setAttribute('class', 'pdinfo');
 		innerdiv.id = i;
@@ -170,7 +170,7 @@ function init(product) {
 		outerdiv.appendChild(innerdiv);
 		innerdiv.appendChild(pinfo);
 		outerdiv.appendChild(img);
-		outerdiv.appendChild(clickh);
+		outerdiv.appendChild(click);
 	}
 }
 
@@ -196,7 +196,7 @@ function infscroll() {
 		const innerdiv = document.createElement('div');
 		const pinfo = document.createElement('p');
 		
-		const clickh = document.createElement('div');
+		const click = document.createElement('div');
 
 		let url = './' + product[start].src;
     
@@ -205,10 +205,10 @@ function infscroll() {
 		img.src = url;
 		img.alt = product.name;
 		
-		clickh.setAttribute('class', 'click');
-		clickh.textContent = "Click for detail";
-		clickh.style.opacity = "1";
-		clickh.id = start + 'c';
+		click.setAttribute('class', 'click');
+		click.textContent = "Click for detail";
+		click.style.opacity = "1";
+		click.id = start + 'c';
 
 		innerdiv.setAttribute('class', 'pdinfo');
 		innerdiv.id = start;
@@ -239,6 +239,6 @@ function infscroll() {
 		outerdiv.appendChild(innerdiv);
 		innerdiv.appendChild(pinfo);
 		outerdiv.appendChild(img);
-		outerdiv.appendChild(clickh);
+		outerdiv.appendChild(click);
 	}
 }
