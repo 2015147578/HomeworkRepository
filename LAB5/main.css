@@ -28,7 +28,7 @@ em			{color: red;}
 .producthd	{width: 100%; border-style: none none solid; padding: 20px 0px 10px 0px; margin-bottom: 15px; font-size: 22px; font-family: Tahoma; font-weight: bold;}
 
 .products	{display: flex; flex-flow: row wrap; justify-content: space-around; width: 100%;}
-.pdimg img	{width: 450px; height: 450px;}
+.pdimg img	{width: 450px; height: 450px; border: 2px solid #000000;}
 .pdimg p	{font-family: Tahoma; font-weight: bold; margin-top: 5px; margin-bottom: 25px; font-size: 14px; text-align: right;}
 .pdinfo		{position: absolute; width: 450px; height: 450px; opacity: 0; background: rgba(0, 0, 0, 0.7); color: #FFFFFF;}
 .pdinfo p	{font-family: Tahoma; font-weight: bold; font-size: 22px; text-align: center; padding: 200px 0;}
