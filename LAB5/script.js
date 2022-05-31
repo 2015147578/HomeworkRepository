@@ -136,9 +136,9 @@ function init(product) {
         innerdiv.setAttribute('class', 'pdinfo');
         innerdiv.id = i;
         innerdiv.style.opacity = "0";
-        innerdiv.onclick = switchOpacity(innerdiv);
+        innerdiv.onclick = switchOpacity(innerdiv.id);
 
-        pinfo.innerHTML = 'Product: ' + product.name; + '<br>Price(₩) : ' + product.price;
+        pinfo.innerHTML = 'Product: ' + product.name + '<br/>Price(₩) : ' + product.price;
 		
 		click.textContent = "Click for detail";
 
@@ -175,7 +175,7 @@ function infscroll() {
 		
 			const click = document.createElement('p');
 
-            let url = './' + product[start].img;
+            let url = './' + product[start].src;
     
             outerdiv.setAttribute('class', 'pdimg');
 			
@@ -185,9 +185,9 @@ function infscroll() {
 			innerdiv.setAttribute('class', 'pdinfo');
             innerdiv.id = start;
             innerdiv.style.opacity = "0";
-            innerdiv.onclick = switchOpacity(innerdiv);
+            innerdiv.onclick = switchOpacity(innerdiv.id);
 
-            pinfo.innerHTML = 'Product: ' + product.name; + '<br>Price(₩) : ' + product.price;
+            pinfo.innerHTML = 'Product: ' + product.name + '<br/>Price(₩) : ' + product.price;
 			
 			click.textContent = "Click for detail";
     
@@ -201,11 +201,15 @@ function infscroll() {
         .catch(console.error);
 };
 
-function switchOpacity(div) {
+function switchOpacity(i) {
+	var div = document.getElementById(i);
 	if(div.style.opacity === "0") {
         div.style.opacity = "1";
     }
 	else if(div.style.opacity === "1") {
         div.style.opacity = "0";
     }
+	else {
+		div.style.opacity = "0";
+	}
 };
