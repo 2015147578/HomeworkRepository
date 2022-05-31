@@ -1,5 +1,5 @@
 const myReq = new Request('product.json')
-let counter = 4;
+let imgcount = 4;
 
 fetch(myReq).then(response => response.json()).then(
 	function(json) {
@@ -17,8 +17,8 @@ function init(product) {
 	let currPrice = fprice.value;
 	let currName = '';
 	
-	let priceFiltered;
-    let nameFiltered;
+	let priceFiltered;	// 가격으로 필터링
+    let nameFiltered;	// 이름으로 필터링
 
     nameFiltered = product;
     productUpdate();
@@ -47,28 +47,28 @@ function init(product) {
             }
 			else {
                 let price = fprice.value;
-				if (price === "5000") {
+				if (price === "5000") {					// 가격 5000 이하
 					for(let i = 0; i < product.length; i++){
 						if(product[i].price <= 5000) {
 							priceFiltered.push(product[i]);
 						}
 					}
 				}
-				else if (price === "5001to10000") {
+				else if (price === "5001to10000") {		// 가격 5000 초과 10000 이하
 					for(let i = 0; i < product.length; i++){
 						if(product[i].price > 5000 && product[i].price <= 10000) {
 							priceFiltered.push(product[i]);
 						}
 					}
 				}
-				else if (price === "10001to15000") {
+				else if (price === "10001to15000") {	// 가격 10000 초과 15000 이하
 					for(let i = 0; i < product.length; i++){
 						if(product[i].price > 10000 && product[i].price <= 15000) {
 							priceFiltered.push(product[i]);
 						}
 					}
 				}
-				else if (price === "15001") {
+				else if (price === "15001") {			// 가격 15000 초과
 					for(let i = 0; i < product.length; i++){
 						if(product[i].price > 15000) {
 							priceFiltered.push(product[i]);
@@ -81,15 +81,15 @@ function init(product) {
     }
 
     function filterName() {
-        if(fname.value.trim() === '') {
+        if(fname.value.trim() === '') {		// 검색어 없음
             nameFiltered = priceFiltered;
             productUpdate();
         }
 		else {
-            let lowerCaseSearchTerm = fname.value.trim().toLowerCase();
+            let nametosearch = fname.value.trim().toLowerCase();
     
             for(let i = 0; i < priceFiltered.length; i++) {
-                if(priceFiltered[i].name.toLowerCase().includes(lowerCaseSearchTerm)) {
+                if(priceFiltered[i].name.toLowerCase().includes(nametosearch)) {
                     nameFiltered.push(priceFiltered[i]);
                 }
             }
@@ -108,12 +108,12 @@ function init(product) {
             pdbox.appendChild(para);
         } else {
             for(let i = 0; i < 4; i++) {
-                fetchImg(nameFiltered[i], i);
+                createImgUrl(nameFiltered[i], i);
             }
         }
     }
     
-    function fetchImg(product, i) {
+    function createImgUrl(product, i) {
         let url = './' + product.img;
         showProduct(url, product, i);
     }
@@ -147,7 +147,7 @@ function init(product) {
 
         prompt.textContent = "Click for detail";
 
-        info.textContent = 'Product: ' + product.name;
+        info.innerHTML = 'Product: ' + product.name; + '<br>' + 'Price(₩) : ' + product.price;
         price.textContent = 'Price(₩) : ' + product.price;
             
         img.src = objURL;
@@ -172,9 +172,9 @@ window.addEventListener('scroll', () => {
 function load() {
     const pdbox = document.getElementById('pdbox');
 
-    var start = counter;
+    var start = imgcount;
     var end = start + 3;
-    counter = end;
+    imgcount = end;
 
     fetch(myReq).then(response => response.json()).then(function(json) {
         let product = json;

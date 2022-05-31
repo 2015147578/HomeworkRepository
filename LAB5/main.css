@@ -30,7 +30,8 @@ em			{color: red;}
 .products	{display: flex; flex-flow: row wrap; justify-content: space-around; width: 100%;}
 .pdimg img	{width: 450px; height: 450px;}
 .pdimg p	{font-family: Tahoma; font-weight: bold; margin-top: 5px; font-size: 14px; text-align: right;}
-.pdinfo		{position: absolute; text-align: center; width: 450px; height: 450px; opacity: 0; font-size: 22px; background: rgba(0, 0, 0, 0.7);}
+.pdinfo		{position: absolute; width: 450px; height: 450px; opacity: 0; background: rgba(0, 0, 0, 0.7);}
+.pdinfo p	{font-family: Tahoma; font-weight: bold; font-size: 22px; text-align: center; padding: 200px 0;}
 
 .ntc		{flex: 20%; max-width: 25%; margin: 4px 4px; border-style: solid; border-width: 1px;}
 
