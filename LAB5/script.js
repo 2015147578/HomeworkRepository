@@ -145,7 +145,6 @@ function init(product) {
         pdbox.appendChild(outerdiv);
         outerdiv.appendChild(innerdiv);
         innerdiv.appendChild(pinfo);
-        innerdiv.appendChild(price)
         outerdiv.appendChild(img);
         outerdiv.appendChild(click);
     }
@@ -195,7 +194,6 @@ function infscroll() {
             pdbox.appendChild(outerdiv);
 			outerdiv.appendChild(innerdiv);
 			innerdiv.appendChild(pinfo);
-			innerdiv.appendChild(price)
 			outerdiv.appendChild(img);
 			outerdiv.appendChild(click);
         }
