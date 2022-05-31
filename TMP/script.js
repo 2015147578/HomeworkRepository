@@ -170,6 +170,7 @@ function init(product) {
 		outerdiv.appendChild(innerdiv);
 		innerdiv.appendChild(pinfo);
 		outerdiv.appendChild(img);
+		outerbox.innerHTML = '<br>';
 		outerdiv.appendChild(click);
 	}
 }
@@ -239,6 +240,7 @@ function infscroll() {
 		outerdiv.appendChild(innerdiv);
 		innerdiv.appendChild(pinfo);
 		outerdiv.appendChild(img);
+		outerbox.innerHTML = '<br>';
 		outerdiv.appendChild(click);
 	}
 }
