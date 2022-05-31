@@ -183,7 +183,7 @@ function load() {
 			const info = document.createElement('p');
 			const price = document.createElement('p');
 
-            let url = './' + products[start].img;
+            let url = './' + product[start].img;
     
             outerdiv.setAttribute('class', 'pdimg');
 
@@ -203,11 +203,11 @@ function load() {
 
             prompt.textContent = "Click to see more";
 
-            info.textContent = products[start].name;
-            price.textContent = '$' + products[start].price;
+            info.textContent = product[start].name;
+            price.textContent = '$' + product[start].price;
             
             img.src = url;
-            img.alt = products[start].name;
+            img.alt = product[start].name;
     
             pdbox.appendChild(outerdiv);
 			outerdiv.appendChild(innerdiv);
