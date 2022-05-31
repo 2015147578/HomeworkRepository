@@ -208,7 +208,7 @@ function infscroll() {
 					}
 				}
 
-            pinfo.innerHTML = 'Product : ' + product.name + '<br/>Price(₩) : ' + product.price;
+            pinfo.innerHTML = 'Product : ' + product[start].name + '<br/>Price(₩) : ' + product[start].price;
 			
 			click.textContent = "Click for detail";
     
