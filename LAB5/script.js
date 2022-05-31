@@ -121,10 +121,13 @@ function init(product) {
     function showProduct(objURL, product, i) {
         const outerdiv = document.createElement('div');
         const img = document.createElement('img');
-        const innerdiv = document.createElement('div');
-        const prompt = document.createElement('p');
-        const info = document.createElement('p');
+		
+		const innerdiv = document.createElement('div');
+		const info = document.createElement('p');
         const price = document.createElement('p');
+		
+        const prompt = document.createElement('p');
+		
 
         outerdiv.setAttribute('class', 'pdimg');
 
@@ -144,8 +147,8 @@ function init(product) {
 
         prompt.textContent = "Click for detail";
 
-        info.textContent = product.name;
-        price.textContent = '₩' + product.price;
+        info.textContent = 'Product: ' + product.name;
+        price.textContent = 'Price(₩) : ' + product.price;
             
         img.src = objURL;
         img.alt = product.name;
@@ -178,10 +181,12 @@ function load() {
         for(start; start < end; start++) {
             const outerdiv = document.createElement('div');
 			const img = document.createElement('img');
+		
 			const innerdiv = document.createElement('div');
-			const prompt = document.createElement('p');
 			const info = document.createElement('p');
 			const price = document.createElement('p');
+		
+			const prompt = document.createElement('p');
 
             let url = './' + product[start].img;
     
@@ -203,8 +208,8 @@ function load() {
 
             prompt.textContent = "Click for detail";
 
-            info.textContent = product[start].name;
-            price.textContent = '$' + product[start].price;
+            info.textContent = 'Product: ' + product.name;
+            price.textContent = 'Price(₩) : ' + product[start].price;
             
             img.src = url;
             img.alt = product[start].name;
