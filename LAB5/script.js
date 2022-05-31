@@ -124,7 +124,6 @@ function init(product) {
 		
 		const innerdiv = document.createElement('div');
 		const pinfo = document.createElement('p');
-        const price = document.createElement('p');
 		
         const click = document.createElement('p');
 		
@@ -137,19 +136,9 @@ function init(product) {
         innerdiv.setAttribute('class', 'pdinfo');
         innerdiv.id = i;
         innerdiv.style.opacity = "0";
-        innerdiv.onclick = function(){
-            var x = document.getElementById(this.id);
-            if(x.style.opacity === "0"){
-                x.style.opacity = "1";
-            } else if(x.style.opacity === "1"){
-                x.style.opacity = "0";
-            } else {
-                x.style.opacity = "0";
-            }
-        }
+        innerdiv.onclick = switchOpacity(innerdiv);
 
-        pinfo.innerHTML = 'Product: ' + product.name; + '<br>' + 'Price(₩) : ' + product.price;
-        price.textContent = 'Price(₩) : ' + product.price;
+        pinfo.innerHTML = 'Product: ' + product.name; + '<br>Price(₩) : ' + product.price;
 		
 		click.textContent = "Click for detail";
 
@@ -184,7 +173,6 @@ function infscroll() {
 		
 			const innerdiv = document.createElement('div');
 			const pinfo = document.createElement('p');
-			const price = document.createElement('p');
 		
 			const click = document.createElement('p');
 
@@ -198,19 +186,9 @@ function infscroll() {
 			innerdiv.setAttribute('class', 'pdinfo');
             innerdiv.id = start;
             innerdiv.style.opacity = "0";
-            innerdiv.onclick = function(){
-                var x = document.getElementById(this.id);
-                if(x.style.opacity === "0"){
-                    x.style.opacity = "1";
-                } else if(x.style.opacity === "1"){
-                    x.style.opacity = "0";
-                } else {
-                    x.style.opacity = "0";
-                }
-            }
+            innerdiv.onclick = switchOpacity(innerdiv);
 
-            info.innerHTML = 'Product: ' + product.name; + '<br>' + 'Price(₩) : ' + product.price;
-            price.textContent = 'Price(₩) : ' + product[start].price;
+            info.innerHTML = 'Product: ' + product.name; + '<br>Price(₩) : ' + product.price;
 			
 			click.textContent = "Click for detail";
     
@@ -223,4 +201,13 @@ function infscroll() {
         }
     })
         .catch(console.error);
+};
+
+function switchOpacity(div) {
+	if(div.style.opacity === "0") {
+        div.style.opacity = "1";
+    }
+	else if(div.style.opacity === "1") {
+        div.style.opacity = "0";
+    }
 };
