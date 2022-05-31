@@ -16,11 +16,11 @@ em			{color: red;}
 .filter		{width: 100%; height: 30px; display: block; font-size: 15px; font-family: Tahoma; font-weight: bold;}
 .nfilter	{display: inline-block; float: right; width: 220px; height: 23px; border: 1px solid #000000; background: #EEEEEE;}
 .nfilter > input
-			{width: 90%; height: 100%; padding: 0 2px; outline: none; border: 0px; height: 100%; font-size: 14px; background: #EEEEEE;}
+			{width: 95%; height: 100%; padding: 0 2px; outline: none; border: 0px; height: 100%; font-size: 14px; background: #EEEEEE;}
 .pfilter	{display: inline-block; float: right; width: 220px; height: 23px; border: 1px solid #000000; background: #EEEEEE;}
 .pfilter > select
 			{width: 100%; height: 100%; padding: 0 2px; outline: none; border: 0px; height: 100%; font-size: 14px; background: #EEEEEE;}
-.fbtn		{float: right; width: 40px; height: 25px; border: 1px solid #000000; padding: 2px 4px; background: #000000; color: #EEEEEE; font-size: 14px;}
+.fbtn		{float: right; width: 90px; height: 25px; border: 1px solid #000000; padding: 2px 4px; background: #000000; color: #EEEEEE; font-size: 14px;}
 .fbtn:hover	{background: #EEEEEE; color: #000000;}
 
 .contents	{margin: 10px;}
