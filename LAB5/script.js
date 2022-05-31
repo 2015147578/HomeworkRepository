@@ -188,7 +188,7 @@ function infscroll() {
             innerdiv.style.opacity = "0";
             innerdiv.onclick = switchOpacity(innerdiv);
 
-            info.innerHTML = 'Product: ' + product.name; + '<br>Price(₩) : ' + product.price;
+            pinfo.innerHTML = 'Product: ' + product.name; + '<br>Price(₩) : ' + product.price;
 			
 			click.textContent = "Click for detail";
     
