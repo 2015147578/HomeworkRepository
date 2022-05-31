@@ -140,19 +140,28 @@ function init(product) {
 		clickh.setAttribute('class', 'click');
 		clickh.textContent = "Click for detail";
 		clickh.style.opacity = "1";
-		clickh.id = i;
+		clickh.id = i + 'c';
 		
 		innerdiv.setAttribute('class', 'pdinfo');
 		innerdiv.id = i;
 		innerdiv.style.opacity = "0";
 		innerdiv.onclick =
 			function() {
-				let div =  document.getElementById(this.id);
-				if (div.style.opacity === "0") {
-					div.style.opacity = "1";
+				let divi = document.getElementById(this.id);
+				let divc = document.getElementById(this.id + 'c');
+				
+				if (divi.style.opacity === "0") {
+					divi.style.opacity = "1";
 				}
 				else {
-					div.style.opacity = "0";
+					divi.style.opacity = "0";
+				}
+				
+				if (divc.style.opacity === "0") {
+					divc.style.opacity = "1";
+				}
+				else {
+					divc.style.opacity = "0";
 				}
 			}
 
@@ -203,19 +212,28 @@ function infscroll() {
 		clickh.setAttribute('class', 'click');
 		clickh.textContent = "Click for detail";
 		clickh.style.opacity = "1";
-		clickh.id = start;
+		clickh.id = start + 'c';
 
 		innerdiv.setAttribute('class', 'pdinfo');
 		innerdiv.id = start;
 		innerdiv.style.opacity = "0";
 		innerdiv.onclick =
 			function() {
-				let div =  document.getElementById(this.id);
-				if (div.style.opacity === "0") {
-					div.style.opacity = "1";
+				let divi = document.getElementById(this.id);
+				let divc = document.getElementById(this.id + 'c');
+				
+				if (divi.style.opacity === "0") {
+					divi.style.opacity = "1";
 				}
 				else {
-					div.style.opacity = "0";
+					divi.style.opacity = "0";
+				}
+				
+				if (divc.style.opacity === "0") {
+					divc.style.opacity = "1";
+				}
+				else {
+					divc.style.opacity = "0";
 				}
 			}
 
