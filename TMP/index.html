@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>My E-Commerce</title>
+		<link rel="stylesheet" type="text/css" href="main.css">
+		<meta name="viewport" content="width=device-width">
+	</head>
+	<body>
+		<div class="main">
+			<div class="hd"><div class="hdani">Welcome to My E-Commerce</div></div>
+			<div class="navi">
+				<div><button class="nbtn currpg">Main</button></div>
+				<div><button class="nbtn" onclick="location.href='login.html'">Login</button></div>
+				<div><button class="nbtn" onclick="location.href='signup.html'">Signup</button></div>
+			</div>
+			<div class="contents">
+				<div class="row">
+					<div class="producthd">Products</div>
+				</div>
+				<div class="filter">
+					<button class="fbtn" id="filterbtn">Apply Filter</button>
+					<div class="nfilter">
+						<input type="text" id="filtername" placeholder="Fruit name">
+					</div>
+					<div class="pfilter">
+						<select name="price" id="filterprice">
+							<option value="all">All</option>
+							<option value="5000">(₩) ~ 5000</option>
+							<option value="5001to10000">(₩) 5001 ~ 10000</option>
+							<option value="10001to15000">(₩) 10001 ~ 15000</option>
+							<option value="15001">(₩) 15001 ~</option>
+						</select>
+					</div>
+				</div>
+				<div class="row">
+					<div class="products" id="pdbox"></div>
+					<div style="width: 450px; height: 450px; background: #FFFFFF;"><div class="click">Click for detail</div></div>
+				</div>
+				<div class="row">
+					<div class="producthd">Notice</div>
+						<div class="ntc">공지사항1공지사항1공지사항1공지사항1공지사항1공지사항1공지사항1공지사항1공지사항1공지사항1공지사항1공지사항1공지사항1공지사항1공지사항1공지사항1공지사항1공지사항1공지사항1공지사항1공지사항1공지사항1공지사항1공지사항1공지사항1공지사항1</div>
+						<div class="ntc">공지사항2공지사항2공지사항2공지사항2공지사항2공지사항2공지사항2공지사항2공지사항2공지사항2공지사항2공지사항2공지사항2공지사항2공지사항2공지사항2공지사항2공지사항2공지사항2공지사항2공지사항2공지사항2공지사항2공지사항2공지사항2공지사항2</div>
+						<div class="ntc">공지사항3공지사항3공지사항3공지사항3공지사항3공지사항3공지사항3공지사항3공지사항3공지사항3공지사항3공지사항3공지사항3공지사항3공지사항3공지사항3공지사항3공지사항3공지사항3공지사항3공지사항3공지사항3공지사항3공지사항3공지사항3공지사항3</div>
+						<div class="ntc">공지사항4공지사항4공지사항4공지사항4공지사항4공지사항4공지사항4공지사항4공지사항4공지사항4공지사항4공지사항4공지사항4공지사항4공지사항4공지사항4공지사항4공지사항4공지사항4공지사항4공지사항4공지사항4공지사항4공지사항4공지사항4공지사항4</div>
+				</div>
+			</div>
+		</div>
+		<script src="script.js"></script>
+	</body>
+</html>
