@@ -118,7 +118,7 @@ function init(product) {
         showProduct(url, product, i);
     }
     
-    function showProduct(objURL, product, i) {
+    function showProduct(imgurl, product, i) {
         const outerdiv = document.createElement('div');
         const img = document.createElement('img');
 		
@@ -130,7 +130,7 @@ function init(product) {
 
         outerdiv.setAttribute('class', 'pdimg');
 		
-		img.src = objURL;
+		img.src = imgurl;
         img.alt = product.name;
 
         innerdiv.setAttribute('class', 'pdinfo');
@@ -180,7 +180,7 @@ function infscroll() {
     
             outerdiv.setAttribute('class', 'pdimg');
 			
-			img.src = objURL;
+			img.src = url;
 			img.alt = product.name;
 
 			innerdiv.setAttribute('class', 'pdinfo');
