@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>My E-Commerce</title>
+		<link rel="stylesheet" type="text/css" href="../main.css">
+		<meta name="viewport" content="width=device-width">
+	</head>
+	<body>
+		<div class="main">
+			<div class="hd"><div class="hdani">Welcome to My E-Commerce</div></div>
+			<div class="navi">
+				<div><button class="nbtn" onclick="location.href='/'">Main</button></div>
+				<div><button class="nbtn" onclick="location.href='/login'">Login</button></div>
+				<div><button class="nbtn" onclick="location.href='/signup'">Signup</button></div>
+			</div>
+			<div class="contents">
+				<div class="row">
+					<div class="producthd">Products</div>
+				</div>
+				<div class="row">
+					<div class="products" id="pdbox">
+						<div class="pdimg">
+							<div class="pdinfo">
+							</div>
+							<img src="<%= img_path %>" alt="<%= pd_name %>">
+						</div>
+						<div class="pddesc">
+							<p>Name : <%= pd_name %></p>
+							<p>Price : <%= pd_price %></p>
+							<div class="comment">
+								<p style="text-align: center">LEAVE YOUR COMMENT</p>
+								<form action="/product/<%= pd_id %>" method="post">
+									<input type="text" name="comment" id="comment" placeholder="Comment Here">
+									<button type="submit" id="submitcmmt">Submit</button>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="producthd">Comments</div>
+				</div>
+				<% for (var i = 0; i < num; i++) { %>
+					<p class="comments"><%= commenthere[i] %></p>
+				<% } %>
+			</div>
+		</div>
+	</body>
+</html>
